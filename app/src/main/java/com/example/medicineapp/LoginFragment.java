@@ -145,7 +145,7 @@ public class LoginFragment extends Fragment {
 
                             @Override
                             public void onSuccess(AuthResult authResult) {
-                                gotoSignupFragment();
+                                gotoAddMedicineFragment();
                                 Toast.makeText(getActivity(), "Success!", Toast.LENGTH_SHORT).show();
                             }
                         }
