@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddMedicineFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/etNameAddMed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="105dp"
+            android:ems="10"
+            android:hint="name..."
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etQuantityAddMed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="1dp"
+            android:ems="10"
+            android:hint="quantity..."
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/etNameAddMed"
+            app:layout_constraintTop_toBottomOf="@+id/etNameAddMed" />
+
+        <EditText
+            android:id="@+id/etExpirationAddMed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="52dp"
+            android:ems="10"
+            android:hint="expiration..."
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="@+id/etQuantityAddMed"
+            app:layout_constraintTop_toBottomOf="@+id/etQuantityAddMed" />
+
+        <EditText
+            android:id="@+id/etMealTimeAddMed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="3dp"
+            android:ems="10"
+            android:hint="meal time..."
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/etExpirationAddMed"
+            app:layout_constraintTop_toBottomOf="@+id/etExpirationAddMed" />
+
+        <TextView
+            android:id="@+id/tvInsertIMG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="168dp"
+            android:text="Insert Image"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etMealTimeAddMed" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvInsertIMG"
+            app:layout_constraintTop_toBottomOf="@+id/etMealTimeAddMed" />
+
+
+        <Button
+            android:id="@+id/btnAddMed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="23dp"
+            android:text="Add Med"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
