@@ -2,87 +2,134 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginFragment">
 
+    <!-- Background -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
-        <TextView
-            android:id="@+id/tvSignupLinkLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="80dp"
-            android:text="Sign Up"
-            app:layout_constraintStart_toStartOf="@+id/btnLogin"
-            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_launcher_foreground"
 
-        <EditText
-            android:id="@+id/etPasswordLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:ems="10"
-            android:hint="password"
-            android:inputType="text"
-            app:layout_constraintStart_toStartOf="@+id/etUsernameLogin"
-            app:layout_constraintTop_toBottomOf="@+id/etUsernameLogin" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="48dp" />
 
+        <!-- Username Input -->
         <EditText
             android:id="@+id/etUsernameLogin"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="102dp"
-            android:ems="10"
-            android:hint="username"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="32dp"
+            android:hint="Username..."
             android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:padding="12dp"
+            android:background="@drawable/edittext_background"
 
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Password Input -->
+        <EditText
+            android:id="@+id/etPasswordLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"
+            android:hint="Password..."
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:background="@drawable/edittext_background"
+
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/etUsernameLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Login Button -->
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:clickable="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="24dp"
             android:text="Log In"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPasswordLogin" />
+            android:textAllCaps="false"
 
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/etPasswordLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Forgot Password Link -->
         <TextView
             android:id="@+id/tvForgotPasswordLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="51dp"
-            android:text="Forgot Password"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSignupLinkLogin" />
+            android:layout_marginTop="16dp"
+            android:text="Forgot Password?"
 
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/btnLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Sign Up Link -->
+        <TextView
+            android:id="@+id/tvSignupLinkLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Don't have an account? Sign Up"
+
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvForgotPasswordLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Navigation Links (Optional) -->
         <TextView
             android:id="@+id/tvAddMedLinkLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="49dp"
-            android:text="Add Med"
-            app:layout_constraintStart_toStartOf="@+id/tvForgotPasswordLogin"
-            app:layout_constraintTop_toBottomOf="@+id/tvForgotPasswordLogin" />
+            android:layout_marginTop="16dp"
+            android:text="Add Medicine"
+
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvSignupLinkLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/tvAllMedsLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="37dp"
-            android:text="All Medicines"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAddMedLinkLogin" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginTop="8dp"
+            android:text="View All Medicines"
 
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvAddMedLinkLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
