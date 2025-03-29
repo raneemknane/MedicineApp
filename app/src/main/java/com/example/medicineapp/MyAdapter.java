@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,11 +20,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>
     Context context;
     ArrayList<Medicine> medList;
     private FirebaseServices fbs;
+    private OnItemClickListener listener;
 
-    public MyAdapter(Context context, ArrayList<Medicine> medList) {
+    // Define the interface
+    public interface OnItemClickListener {
+        void onItemClick(Medicine medicine); // Pass the clicked Medicine object
+    }
+
+    public MyAdapter(Context context, ArrayList<Medicine> medList, OnItemClickListener listener) {
         this.context = context;
         this.medList = medList;
         this.fbs = FirebaseServices.getInstance();
+        this.listener = listener;
     }
 
 
@@ -55,6 +63,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>
         } else {
             holder.ivMedPhoto.setImageResource(R.drawable.default_image); // Default image
         }
+        // Set click listener on the item view
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(med); // Notify listener with the clicked Medicine
+            }
+        });
 
     }
 

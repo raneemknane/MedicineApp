@@ -1,6 +1,8 @@
 package com.example.medicineapp;
 
-public class Medicine
+import java.io.Serializable;
+
+public class Medicine implements Serializable
 {
     private String name ;
     private String expiration;
