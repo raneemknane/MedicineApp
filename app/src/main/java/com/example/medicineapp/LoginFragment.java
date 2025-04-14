@@ -168,14 +168,14 @@ public class LoginFragment extends Fragment {
 
     private void gotoSignupFragment() {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.frameLayoutMain, new SignUpFragment());
+        ft.replace(R.id.fragment_container, new SignUpFragment());
         ft.commit();
         ft.addToBackStack(null);
     }
 
     private void gotoForgotPasswordFragment() {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.frameLayoutMain, new ForgotPasswordFragment());
+        ft.replace(R.id.fragment_container, new ForgotPasswordFragment());
         ft.commit();
         ft.addToBackStack(null);
 
@@ -183,14 +183,14 @@ public class LoginFragment extends Fragment {
 
     private void gotoAddMedicineFragment() {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.frameLayoutMain, new AddMedicineFragment());
+        ft.replace(R.id.fragment_container, new AddMedicineFragment());
         ft.commit();
         ft.addToBackStack(null);
     }
 
     private void gotoAllMedicinesFragment () {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.frameLayoutMain, new AllMedicinesFragment());
+        ft.replace(R.id.fragment_container, new AllMedicinesFragment());
         ft.commit();
         ft.addToBackStack(null);
     }

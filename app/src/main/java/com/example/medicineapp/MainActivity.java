@@ -1,12 +1,10 @@
 package com.example.medicineapp;
 
-import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
+import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,35 +12,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-    }
 
-    /*@Override
-    protected void onStart(){
-        super.onStart();
-        gotoLoginFragment();
-    }*/
-    @Override
-    protected void onStart() {
-        super.onStart();
+        // Load the MainFragment if no fragment is already loaded
+        if (savedInstanceState == null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-        // Check if there is already a fragment in the container
-        if (getSupportFragmentManager().findFragmentById(R.id.frameLayoutMain) == null) {
-            gotoLoginFragment();
+            // Replace the container with the MainFragment
+            transaction.replace(R.id.fragment_container, new MainFragment());
+            transaction.commit();
         }
     }
-
-    private void gotoLoginFragment() {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.frameLayoutMain, new LoginFragment());
-        ft.commit();
-    }
-
-
 }

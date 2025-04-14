@@ -2,7 +2,6 @@ package com.example.medicineapp;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,10 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -98,7 +94,7 @@ public class AllMedicinesFragment extends Fragment implements MyAdapter.OnItemCl
 
         // Use Fragment Transactions to replace the current fragment
         getParentFragmentManager().beginTransaction()
-                .replace(R.id.frameLayoutMain, detailFragment) // Replace with your container ID
+                .replace(R.id.fragment_container, detailFragment) // Replace with your container ID
                 .addToBackStack(null) // Add to back stack so users can return
                 .commit();
     }
