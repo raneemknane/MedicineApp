@@ -2,28 +2,64 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    tools:context=".function.LoginFragment">
 
     <!-- Background -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:background="#F5F5F5">
 
-        <!-- Logo -->
+        <!-- Back Arrow -->
         <ImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/ic_launcher_foreground"
+            android:id="@+id/ivBackArrowLogIn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Back to Main Fragment"
+            android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            app:layout_constraintTop_toTopOf="parent"
+        <!-- Profile Picture -->
+        <ImageView
+            android:id="@+id/ivProfilePicture"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_profile"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="48dp" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Medicine Logo -->
+        <TextView
+            android:id="@+id/tvLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MedicineApp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/darkGray"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="@id/ivProfilePicture"
+            app:layout_constraintStart_toEndOf="@id/ivProfilePicture"
+            app:layout_constraintBottom_toTopOf="@id/tvLoginPrompt" />
+
+        <!-- Login Prompt -->
+        <TextView
+            android:id="@+id/tvLoginPrompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please log in"
+            android:textSize="14sp"
+            android:textColor="#999999"
+            app:layout_constraintStart_toStartOf="@id/tvLogo"
+            app:layout_constraintTop_toBottomOf="@id/tvLogo" />
 
         <!-- Username Input -->
         <EditText
@@ -31,17 +67,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="68dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginTop="32dp"
-            android:hint="Username..."
+            android:hint="Enter Username..."
+            android:background="@drawable/edittext_background"
+            android:textColor="@color/darkGray"
+            android:textColorHint="@color/darkGray"
             android:inputType="text"
             android:padding="12dp"
-            android:background="@drawable/edittext_background"
-
             android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/ivLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/ivProfilePicture" />
 
         <!-- Password Input -->
         <EditText
@@ -51,11 +89,12 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginTop="16dp"
-            android:hint="Password..."
+            android:hint="Enter Password..."
+            android:textColor="@color/darkGray"
+            android:textColorHint="@color/darkGray"
             android:inputType="textPassword"
             android:padding="12dp"
             android:background="@drawable/edittext_background"
-
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/etUsernameLogin"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,8 +109,9 @@
             android:layout_marginEnd="32dp"
             android:layout_marginTop="24dp"
             android:text="Log In"
+            android:textColor="@color/white"
             android:textAllCaps="false"
-
+            android:backgroundTint="@color/teal_200"
             android:padding="12dp"
             app:layout_constraintTop_toBottomOf="@id/etPasswordLogin"
             app:layout_constraintStart_toStartOf="parent"
@@ -82,14 +122,15 @@
             android:id="@+id/tvForgotPasswordLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="88dp"
             android:text="Forgot Password?"
-
+            android:textColor="@color/darkGray"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/btnLogin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/btnLogin" />
 
         <!-- Sign Up Link -->
         <TextView
@@ -98,37 +139,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Don't have an account? Sign Up"
-
+            android:textColor="@color/darkGray"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/tvForgotPasswordLogin"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <!-- Navigation Links (Optional) -->
-        <TextView
-            android:id="@+id/tvAddMedLinkLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Add Medicine"
-
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/tvSignupLinkLogin"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/tvAllMedsLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="View All Medicines"
-
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/tvAddMedLinkLogin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

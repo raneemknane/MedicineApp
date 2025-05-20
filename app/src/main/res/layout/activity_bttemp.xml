@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_bttemp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F5F5"
+    tools:context=".BlueTooths.BTtemp">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Temp Monitor"
+        android:backgroundTint="@color/teal_200"
+        android:textColor="@color/teal_100"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    <!-- Progress Bar while connecting -->
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar2"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+    <!-- Button to Connect to Device -->
+    <Button
+        android:id="@+id/buttonConnect2"
+        android:textColor="@color/teal_200"
+        android:backgroundTint="@color/teal_100"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Device"
+        android:layout_below="@id/progressBar2"
+        android:layout_marginTop="16dp" />
+
+    <!-- Status Info TextView -->
+    <TextView
+        android:id="@+id/textViewInfo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:text="Status: Waiting..."
+        android:textSize="18sp"
+        android:layout_below="@id/buttonConnect2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
+    <!-- Heart Rate Display -->
+    <TextView
+        android:id="@+id/textViewTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:text="Temp: -- C"
+        android:textSize="20sp"
+        android:layout_below="@id/textViewInfo2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- Toggle Button for Start/Stop Measurement -->
+    <Button
+        android:id="@+id/buttonToggle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="START"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/teal_200"
+        android:layout_below="@id/textViewTemp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:enabled="false" />
+
+    <!-- LED Indicator (for red/green LED) -->
+
+
+
+    <!-- Emoji / Face Icon View -->
+    <ImageView
+        android:id="@+id/imageViewStatus2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/buttonToggle2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/temp"
+        android:contentDescription="Temp Status" />
+
+    <Button
+        android:id="@+id/btnBTback2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:textColor="@color/teal_200"
+        android:backgroundTint="@color/teal_100"
+        android:layout_below="@id/imageViewStatus2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        />
+
+</RelativeLayout>

@@ -4,62 +4,74 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:padding="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
     <!-- ImageView for Medicine Photo -->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_foreground"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/ic_launcher_foreground" />
+        app:layout_constraintBottom_toBottomOf="parent" />
+
     <!-- TextView for Medicine Name -->
     <TextView
         android:id="@+id/tvNameAddMed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:text="Medicine Name"
+        android:textColor="@color/darkGray"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
     <!-- TextView for Expiration Date -->
     <TextView
         android:id="@+id/tvExpirationMedItem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="Expiration Date"
+        android:textColor="@color/darkGray"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/imageView2"
         app:layout_constraintTop_toBottomOf="@id/tvNameAddMed"
         app:layout_constraintEnd_toEndOf="parent" />
+
     <!-- TextView for Meal Time -->
     <TextView
         android:id="@+id/tvMealTimeAddMed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="Meal Time"
+        android:textColor="@color/darkGray"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/imageView2"
         app:layout_constraintTop_toBottomOf="@id/tvExpirationMedItem"
         app:layout_constraintEnd_toEndOf="parent" />
+
     <!-- TextView for Quantity -->
     <TextView
         android:id="@+id/tvQuantityAddMed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="Quantity"
+        android:textColor="@color/darkGray"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/imageView2"
         app:layout_constraintTop_toBottomOf="@id/tvMealTimeAddMed"

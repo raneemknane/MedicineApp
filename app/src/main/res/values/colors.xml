@@ -10,12 +10,15 @@
     <!-- Primary and Secondary Colors -->
     <color name="primaryColor">#6200EE</color> <!-- Purple -->
     <color name="secondaryColor">#FFC107</color> <!-- Yellow -->
-    <color name="accentColor">#FF5722</color><!-- Teal accent -->
+    <color name="accentColor">#FF5722</color>
+    <color name="teal_100">#BBEDE2</color><!-- Teal accent -->
+    <color name="teal_300">#995BBAB1</color>
+    <color name="teal_200">#00B09F</color>
 
     <!-- Neutral colors -->
-    <color name="gray">#CCCCCC</color> <!-- Light gray -->
-    <color name="darkGray">#373636</color> <!-- Dark gray -->
-    <color name="lightGray">#F5F5F5</color> <!-- Very light gray -->
+    <color name="gray">#BBF0F0F0</color> <!-- Light gray -->
+    <color name="darkGray">#545454</color> <!-- Dark gray -->
+    <color name="lightGray">#92E0E0E0</color> <!-- Very light gray -->
 
     <!-- Error and success colors -->
     <color name="errorRed">#CF6679</color> <!-- Red for error states -->

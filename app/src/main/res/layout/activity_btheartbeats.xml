@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_btheartbeats"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F5F5"
+    tools:context=".BlueTooths.BTheartbeats">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Heart Rate Monitor"
+        android:backgroundTint="@color/teal_200"
+        android:textColor="@color/teal_100"
+        android:background="?attr/colorPrimary"
+
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    <!-- Progress Bar while connecting -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+    <!-- Button to Connect to Device -->
+    <Button
+        android:id="@+id/buttonConnect"
+        android:textColor="@color/teal_200"
+        android:backgroundTint="@color/teal_100"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Device"
+        android:layout_below="@id/progressBar"
+        android:layout_marginTop="16dp" />
+
+    <!-- Status Info TextView -->
+    <TextView
+        android:id="@+id/textViewInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status: Waiting..."
+        android:textSize="18sp"
+        android:textColor="@color/darkGray"
+        android:layout_below="@id/buttonConnect"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
+    <!-- Heart Rate Display -->
+    <TextView
+        android:id="@+id/textViewHeartRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heart Rate: -- BPM"
+        android:textColor="@color/darkGray"
+        android:textSize="20sp"
+        android:layout_below="@id/textViewInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- Toggle Button for Start/Stop Measurement -->
+    <Button
+        android:id="@+id/buttonToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="START"
+
+        android:textColor="@color/white"
+        android:backgroundTint="@color/teal_200"
+        android:layout_below="@id/textViewHeartRate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:enabled="false" />
+
+    <!-- LED Indicator (for red/green LED) -->
+
+
+
+    <!-- Emoji / Face Icon View -->
+    <ImageView
+        android:id="@+id/imageViewStatus"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/buttonToggle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/heart"
+        android:contentDescription="Heart Rate Status" />
+
+    <Button
+        android:id="@+id/btnBTback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:textColor="@color/teal_200"
+        android:backgroundTint="@color/teal_100"
+        android:layout_below="@id/imageViewStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+       />
+
+</RelativeLayout>

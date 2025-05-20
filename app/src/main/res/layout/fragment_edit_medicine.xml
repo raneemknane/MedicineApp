@@ -9,7 +9,7 @@
 
     <!-- Back Arrow -->
     <ImageView
-        android:id="@+id/ivBackArrowMedDetail"
+        android:id="@+id/ivBackArrowEditMed"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginStart="16dp"
@@ -21,22 +21,22 @@
 
     <!-- Title Section -->
     <LinearLayout
-        android:id="@+id/titleContainer"
+        android:id="@+id/titleContainerEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivBackArrowMedDetail"
+        app:layout_constraintStart_toEndOf="@id/ivBackArrowEditMed"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp">
 
         <!-- Title Text -->
         <TextView
-            android:id="@+id/tvTitle"
+            android:id="@+id/tvTitleEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your Medicine"
+            android:text="Update Your Medicine"
             android:textColor="@color/darkGray"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -45,7 +45,7 @@
 
         <!-- Medicine Icon -->
         <ImageView
-            android:id="@+id/ivMedicineIcon"
+            android:id="@+id/ivMedicineIconEdit"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/ic_medicine_icon2"
@@ -54,101 +54,99 @@
             android:layout_marginEnd="16dp" />
     </LinearLayout>
 
-
-
-    <TextView
-        android:id="@+id/tvDetailName"
+    <!-- Expiration Date -->
+    <EditText
+        android:id="@+id/etNameEditMed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Medicine Name"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/edittext_background"
+        android:hint="Medicine Name"
+        android:inputType="text"
+        android:padding="12dp"
         android:textColor="@color/darkGray"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:textColorHint="@color/darkGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleContainer" />
+        app:layout_constraintTop_toBottomOf="@id/titleContainerEdit" />
 
-    <ImageView
-        android:id="@+id/ivDetailPhoto"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDetailName"
-        android:layout_marginTop="16dp" />
-
-    <!-- Expiration Date -->
-    <TextView
-        android:id="@+id/tvDetailExpiration"
+    <EditText
+        android:id="@+id/etExpirationEditMed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Expiration Date"
+        android:hint="Expiration Date (YYYY-MM-DD)"
+        android:inputType="text"
+        android:background="@drawable/edittext_background"
+        android:digits="0123456789/"
         android:textColor="@color/darkGray"
-        android:textSize="16sp"
+        android:textColorHint="@color/darkGray"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivDetailPhoto"
+        app:layout_constraintTop_toBottomOf="@id/etNameEditMed"
         android:layout_marginTop="16dp" />
 
     <!-- Meal Time -->
-    <TextView
-        android:id="@+id/tvDetailMealTime"
+    <EditText
+        android:id="@+id/etMealTimeEditMed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Meal Time"
+        android:hint="Meal Time (HH:mm)"
+        android:inputType="time"
+        android:background="@drawable/edittext_background"
         android:textColor="@color/darkGray"
-        android:textSize="16sp"
+        android:textColorHint="@color/darkGray"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDetailExpiration"
-        android:layout_marginTop="8dp" />
+        app:layout_constraintTop_toBottomOf="@id/etExpirationEditMed"
+        android:layout_marginTop="16dp" />
 
     <!-- Quantity -->
-    <TextView
-        android:id="@+id/tvDetailQuantity"
+    <EditText
+        android:id="@+id/etQuantityEditMed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Quantity"
+        android:hint="Quantity"
+        android:inputType="number"
+        android:background="@drawable/edittext_background"
         android:textColor="@color/darkGray"
-        android:textSize="16sp"
+        android:textColorHint="@color/darkGray"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDetailMealTime"
-        android:layout_marginTop="8dp" />
+        app:layout_constraintTop_toBottomOf="@id/etMealTimeEditMed"
+        android:layout_marginTop="16dp" />
 
-    <!-- Edit Button -->
+    <!-- Image Upload -->
+    <ImageView
+        android:id="@+id/imageViewEdit"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder_image"
+        android:contentDescription="Medicine Image"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etQuantityEditMed"
+        android:layout_marginTop="16dp" />
+
+    <!-- Update Button -->
     <Button
-        android:id="@+id/btnEditMedicine"
+        android:id="@+id/btnSaveMed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/teal_100"
-        android:padding="12dp"
-        android:text="Edit Medicine"
+        android:text="Update Medicine"
         android:textAllCaps="false"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/teal_200"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDetailQuantity" />
-
-    <!-- Delete Button -->
-    <Button
-        android:id="@+id/btnDeleteMed"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#FFEBEE"
-        android:padding="12dp"
-        android:text="Delete Medicine"
-        android:textAllCaps="false"
-        android:textColor="#D32F2F"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnEditMedicine" />
-
+        app:layout_constraintTop_toBottomOf="@id/imageViewEdit"
+        android:layout_marginTop="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
