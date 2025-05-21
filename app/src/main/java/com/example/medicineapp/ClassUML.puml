@@ -1,0 +1,154 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam packageTitleStyle rectangle
+
+package "com.example.medicineapp" {
+    package "Mains" {
+        [MainActivity]
+        [MainFragment]
+        [MainPageFragment]
+    }
+
+    package "function" {
+        [AddMedicineFragment]
+        [EditMedicineFragment]
+        [LoginFragment]
+        [SignUpFragment]
+        [ForgotPasswordFragment]
+        [AllMedicinesFragment]
+        [MedicineDetailFragment]
+        [MedicinesFragment]
+    }
+
+    package "Java" {
+        [Medicine]
+        [MyAdapter]
+        [FirebaseServices]
+        [Utils]
+    }
+
+    package "helpers" {
+        [AlarmReceiver]
+        [BootReceiver]
+    }
+
+    package "BlueTooths" {
+        [BTheartbeats]
+        [BTtemp]
+        [SelectDeviceActivity]
+        [CreateConnectThread]
+        [ConnectedThread]
+        [DeviceInfoModel]
+        [DeviceListAdapter]
+    }
+}
+
+note right of MainActivity
+    Main entry point. Observes auth state and navigates accordingly.
+end note
+
+note right of MainPageFragment
+    Displays main menu for adding/viewing medicines and logout/delete account options.
+end note
+
+note right of AddMedicineFragment
+    Adds new medicine to Firestore and sets daily alarm.
+end note
+
+note right of EditMedicineFragment
+    Edits existing medicine and updates alarm.
+end note
+
+note right of MedicineDetailFragment
+    Shows details of a selected medicine and allows editing/deletion.
+end note
+
+note right of BootReceiver
+    Reschedules alarms after device reboot.
+end note
+
+note right of AlarmReceiver
+    Triggers notification when alarm goes off.
+end note
+
+note right of AllMedicinesFragment
+    Displays list of all medicines using MyAdapter.
+end note
+
+note right of MyAdapter
+    Binds medicine data to RecyclerView items.
+end note
+
+note right of Utils
+    Provides utility functions like image upload and dialog display.
+end note
+
+note right of FirebaseServices
+    Central access point for Firebase Auth/Firestore/Storage instances.
+end note
+
+note right of LoginFragment
+    Handles user login flow.
+end note
+
+note right of SignUpFragment
+    Handles user registration.
+end note
+
+note right of ForgotPasswordFragment
+    Allows password reset via email.
+end note
+
+note right of SelectDeviceActivity
+    Lists available Bluetooth devices for connection.
+end note
+
+note right of CreateConnectThread
+    Manages Bluetooth connection setup.
+end note
+
+note right of ConnectedThread
+    Manages ongoing Bluetooth communication.
+end note
+
+' Relationships
+MainActivity --> MainFragment : navigates
+MainActivity --> MainPageFragment : navigates
+MainPageFragment --> AddMedicineFragment : navigates
+MainPageFragment --> AllMedicinesFragment : navigates
+MainPageFragment --> ChooseService : navigates
+MainPageFragment --> MainFragment : logs out
+
+MainFragment --> LoginFragment : navigates
+MainFragment --> SignUpFragment : navigates
+
+LoginFragment --> MainPageFragment : on success
+LoginFragment --> ForgotPasswordFragment : forgot password
+
+SignUpFragment --> LoginFragment : back
+SignUpFragment --> MainPageFragment : on success
+
+ForgotPasswordFragment --> LoginFragment : back
+
+AllMedicinesFragment --> MedicineDetailFragment : item click
+MedicineDetailFragment --> EditMedicineFragment : edit
+MedicineDetailFragment --> AllMedicinesFragment : delete
+
+AddMedicineFragment --> AlarmReceiver : sets alarm
+EditMedicineFragment --> AlarmReceiver : updates alarm
+BootReceiver --> AlarmReceiver : reschedules alarms on boot
+
+Utils --> FirebaseStorage : uploads images
+Utils --> FirebaseFirestore : fetches documents
+Utils --> Picasso : loads images
+
+FirebaseServices --> FirebaseAuth
+FirebaseServices --> FirebaseFirestore
+FirebaseServices --> FirebaseStorage
+
+MedicineDetailFragment --> Medicine : uses
+AllMedicinesFragment --> Medicine : displays list
+AddMedicineFragment --> Medicine : creates
+EditMedicineFragment --> Medicine : updates
+
+@enduml
